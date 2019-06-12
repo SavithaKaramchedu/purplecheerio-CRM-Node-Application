@@ -1,0 +1,62 @@
+<% include partials/header.ejs %>
+
+
+
+    
+    <div class="col-sm-10 col-md-10 col-lg-10">
+        
+                            <h3 style="border-bottom: 2px solid #5b8fde;padding-bottom: 8px;">LEAD INFORMATION<span><a class="btn btn-default float-right" href="/add" style="background-color: #5b8fde; color:white;" >Add</a></span>
+                            </h3>
+                            
+                            <div class="table-wrapper">
+        <% if (players.length > 0) {%>
+           
+                    
+              
+            <table class="table">
+                <thead class="table" style="background-color: 1b213b ">
+                    <tr style=" color:white; font-weight:bold ; background-color: #5b8fde">
+                        <th scope="col">ID</th>
+                        <th scope="col">Lead Name</th>
+                        <th scope="col">Opportunity Name</th>
+                        <th scope="col">Account</th>
+                        <th scope="col">Contact</th>
+                        <th scope="col">CreatedBy</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <% players.forEach((players, index) => { %>
+                        <tr style=" color:black; font-weight:bold; ">
+                            <th scope="row"><%= players.id %></th>
+                            <td><%= players.first_name %></td>
+                            <td><%= players.last_name %></td>
+                            <td><%= players.position %></td>
+                            <td><%= players.number %></td>
+                            <td>@<%= players.user_name %></td>
+                            <td>
+                                   
+                                <a href="/edit/<%= players.id %>" class="btn btn-sm" style="color:black">Edit</a>
+                                <a href="/delete/<%= players.id %>" class="btn btn-sm" style="color:black">Delete</a>
+                            </td>
+                        </tr>
+                    <% }) %>
+                </tbody>
+            </table>
+    
+        <% } else { %>
+            <p class="text-center">No players found. Go <a href="/add" >here</a> to add players.</p>
+        <% } %>
+    </div>
+  
+   
+          
+          
+
+</div>
+
+
+</div>
+</div>
+</body>
+</html>

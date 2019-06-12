@@ -1,0 +1,52 @@
+<% include partials/header.ejs %>
+
+   
+
+    
+    <div class="col-sm-10 col-md-10 col-lg-10">
+                <h3 style="border-bottom: 2px solid #5b8fde;padding-bottom: 8px;">EMPLOYEE INFORMATION</h3>
+                <div class="table-wrapper">
+<% if (employee.length > 0) {%>
+
+ 
+
+<table class="table">
+<thead class="table" style="background-color: 1b213b ">
+ <tr style=" color:white; font-weight:bold ; background-color: #5b8fde">
+     <th scope="col">Name</th>
+     <th scope="col">Email</th>
+     <th scope="col">Mobile</th>
+     <th scope="col">Phone</th>
+     <th scope="col">Manager</th>
+
+ </tr>
+</thead>
+<tbody>
+ <% employee.forEach((employee, index) => { %>
+     <tr style=" color:black; font-weight:bold; ">
+         <th scope="row"><%= employee.name %></th>
+         <td><%= employee.email %></td>
+         <td><%= employee.mobile %></td>
+         <td><%= employee.phone %></td>
+         <td><%= employee.manager %></td>
+   
+      
+     </tr>
+ <% }) %>
+</tbody>
+</table>
+
+<% } else { %>
+<p class="text-center">No Employee found. Go </p>
+<% } %>
+</div>
+
+          
+
+</div>
+
+
+</div>
+</div>
+</body>
+</html>

@@ -1,0 +1,207 @@
+<% include partials/header.ejs %> 
+    
+<div class="col-sm-10 col-md-10 col-lg-10">
+        <h3 style="border-bottom: 2px solid #5b8fde;padding-bottom: 8px;">ACCOUNT INFORMATION<span>
+              
+                <a class="btn btn-default float-right" href="#target"data-toggle="modal" style="background-color: #5b8fde; color:white;" >Add</a></span>
+            </h3>
+   <div class="border border border-right-0 border border-left-0 border border-bottom-0" style="width:108%">
+      
+         
+            <div class="modal fade" id="target" role="dialog">
+              <div class="modal-dialog" style="width: 41%;">
+              
+                <!-- Modal content-->
+                <div class="modal-content" style="border: 4px solid #dcdada;width: 125%;">
+                  <div class="modal-header" style="background-color:#5b8fde;color:white;height:45px;">
+                     <h5 class="modal-title">Create New Account/Prospect</h5>
+                    <button type="button" class="close" data-dismiss="modal" style="color: white;opacity: 1;margin-top: -21px;">&times;</button>
+                   
+                  </div>
+                  <div class="modal-body" id="rowstyle">
+                        <form class="form-signin" method="post" action="/addAccount">
+                <div class="row">
+                     
+                <div class="col-lg-8">
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group"><span style="color:red">*</span>Name:</div></div>
+                  <div class="col-lg-7"><input type="text" class="form-control" name="nam" style="height:25px;width: 80%;"></div>
+                   </div>
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group">Prospect:</div></div>
+                  <div class="col-lg-7"><input type="checkbox"  id="check" name="check" checked>
+                     
+
+                   </div>
+                   </div>
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group">Parent Account:</div>
+                   </div>
+                   <div class="col-lg-6"><input type="text" class="form-control"  name="paacc" style="height:25px;width:95%;"></div>
+                   <div class="col-lg-1" style="margin-left: -31px;"><span class="fa fa-share"></span></div>
+                   </div>
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group">Website:</div></div>
+                   <div class="col-lg-7"><input type="text" class="form-control" name="web" style="height:25px;width: 80%;"></div>
+                   </div>
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group"><span style="color:red">*</span>Account Category:</div></div>
+                   <div class="col-lg-7"><select style="height:25px;width: 80%;border-radius:4px;border: 1px solid #ccc;" name="acccat"><option>Global</option>
+                     <option>N-20</option>
+                     <option>others</option>
+                     <option>platinum</option>
+                     <option>T-30</option>
+                     <option>X-30</option>
+                  </select></div>
+                   </div>
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group"><span style="color:red">*</span>Vertical:</div></div>
+                   <div class="col-lg-7"><select style="height:25px;width: 80%;border-radius:4px;border: 1px solid #ccc;" name="vert"><option value="" style="display:none;"></option>
+                     <option >L&amp;T Thales</option>
+                     <option>L&amp;T Thales common</option>
+                     <option >GDA IP</option>
+                     <option >VLSI</option>
+                     <option >Admin Own</option>
+                     <option >CE's Office</option>
+                     <option >Capability Enhancement Group</option>
+                     <option >Corporate Centre</option>
+                     <option >Corporate Strategy</option>
+                     <option >Thales</option>
+                     <option >CSR</option>
+                     <option >Analytics &amp; Electric Vehicle</option>
+                     <option >CTO COMMON</option>
+                     <option >Global Alliances &amp; Consulting</option>
+                     <option >M2M &amp; IOT Solutions</option>
+                     <option >TSIC + EPF</option>
+                     <option >F&amp;A &amp; legal</option>
+                     <option >Human Resources System</option>
+                     <option >Central PMO</option>
+                     <option >IT Own</option>
+                     <option >LSM - UK - LLC</option>
+                     <option >Marketing &amp; Corporate communications</option>
+                     <option >Corporate Resource Pool</option>
+                     <option >Operations</option>
+                     <option >RMG</option>
+                     <option >Org Investment Initiatives</option>
+                     <option >Pre- Sales Europe</option></select></div>
+                   </div>
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group"><span style="color:red">*</span>Country:</div></div>
+                   <div class="col-lg-7"><select style="height:25px;width: 80%;border-radius:4px;border: 1px solid #ccc; height: auto;"name="country"><option style="display:none;"></option>
+                     <option >Arab Emirates</option>
+                     <option >Afghanisthan</option>
+                     <option >Albania</option>
+                     <option >Armenia</option>
+                     <option>Angola</option>
+                     <option >Argentina</option>
+                     <option >Austria</option>
+                     <option >Australia</option>
+                     <option >Azerbaijan</option>
+                     <option >Bosnia</option>
+                     <option >Bangladesh</option>
+                     <option >Belgium</option>
+                     <option >Burkina Faso</option>
+                     <option >Bulgaria</option>
+                     <option >Bahrain</option>
+                     <option >Burundi</option>
+                     <option >Benin</option></select></div>
+                   </div>
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group"><span style="color:red">*</span>City:</div></div>
+                   <div class="col-lg-7"><input type="text" class="form-control" style="height:25px;width: 80%;" name="city"></div>
+                   </div>
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group">State:</div></div>
+                   <div class="col-lg-7"><select style="height:25px;width: 80%;border-radius:4px;border: 1px solid #ccc;" name="state"><option>Ajman</option>
+                     <option >Abu Zaby [Abu Dhabi]</option>
+                     <option >Dubayy [Dubai]</option>
+                     <option >Al Fujayrah</option>
+                     <option >Ra's al Khaymah</option>
+                     <option >Ash Shariqah [Sharjah]</option>
+                     <option >Umm al Qaywayn</option></select></div>
+                   </div>
+                   <div class="row">
+                   <div class="col-lg-5"><div class="form-group">Owner:</div></div>
+                   <div class="col-lg-6"><input type="text" class="form-control " style="height:25px;width:95%;" name="owner"></div>
+                   <div class="col-lg-1" style="margin-left: -31px;"><span class="fa fa-share"></span></div> 
+                  </div>
+                  </div>
+                
+                <div class="col-lg-3"></div>
+                </div>
+                </div>
+                  <div class="modal-footer" style="border-top: 1px solid #5061b5;height: 55px;padding: 8px 11px;">
+                                                    	
+                  
+                   <button type="submit"  class="btn btn-primary" style=" background-color: #5b8fde; color:white; ">Save</button>			
+                    <button type="button" class="btn btn-primary" data-dismiss="modal" style=" background-color: #5b8fde; color:white; ">Cancel</button>
+                  </div>
+               </form>
+                </div>
+                
+              </div>
+            </div>
+            
+          
+              <!-- <span class="fa fa-file-excel-o" style="float:right;margin-right: 3%;
+              margin-top: -19px;"></span> -->
+              
+               <!-- <span class="fa fa-refresh" style="float:right;margin-top: -1.5%;
+               margin-right: 1%;"></span> -->
+               
+    </div>            
+     <div class="table-responsive" style="width: 100%;"> 
+         <div class="table-wrapper">
+         <% if (accounts.length > 0) {%>
+
+        <div id="home3" style="height: 574px; padding: 0px; overflow: auto;" >
+            <table class="table">
+                  <thead class="table" style="background-color: 1b213b ">
+                   <tr style=" color:white; font-weight:bold ; background-color: #5b8fde">
+                             <th>Name</th>
+                             <th>Prospect</th> 
+                              <th>ParentAccount</th>
+                              <th>Website</th>
+                              <th>Account Category</th>
+                              <th>Vertical</th>
+                              <th>Country</th>
+                              <th>City</th>
+                              <th>State</th>
+                              <th>Owner</th>
+
+                             </tr>
+                        </thead>
+                             <tbody>
+                                 <% accounts.forEach((account, index) => { %>
+                                    <tr style=" color:black; font-weight:bold; ">
+                                        <!-- <th scope="row"><%= account.id %></th> -->
+                                        <td><%= account.name %></td>
+                                        <td><%= account.prospect %></td>
+                                        <td><%= account.parentaccount %></td>
+                                        <td><%= account.website %></td>
+                                        <td><%= account.accountcategory %></td>
+                                        <td><%= account.vertical %></td>
+                                        <td><%= account.country %></td>
+                                        <td><%= account.city %></td>
+                                        <td><%= account.state %></td>
+                                        <td><%= account.owner %></td>
+                                       </tr>
+                                       <% }) %> 
+                             </tbody>
+                    </table>
+                    <% } else { %>
+                     <p class="text-center">No Accounts found. Go to New to add Account.</p>
+                 <% } %>
+                    </div>
+             </div>
+         </div>     
+     
+</div> 
+
+
+
+
+
+ 
+</body>
+</html>

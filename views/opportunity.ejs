@@ -1,0 +1,341 @@
+
+<% include partials/header.ejs %>
+      
+<style>
+  
+    input[type=text]{
+     height: 21px;
+    border-radius: 5px;
+    width: 210px;
+	}
+	
+	.strike{
+	 height: 21px;
+    border-radius: 5px;
+    width: 210px;
+	}
+  .h1, h1 {
+    font-size: 1.5rem;
+}
+.modal-header-lead {
+    padding: 0px;
+    border-bottom: 1px solid #e5e5e5;
+    background-color: #bdb3b3;
+}
+.btn-danger {
+    color: #fff;
+    background-color: #3587dc;
+    border-color: #3587dc;
+}
+.modal-dialog {
+    max-width: 678px;
+    margin: 9.75rem auto;
+}
+.modal-footer {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-align: center;
+    align-items: center;
+    -ms-flex-pack: end;
+    justify-content: flex-end;
+    padding: 1rem;
+    border-top: 1px solid #dee2e6;
+    border-bottom-right-radius: .3rem;
+    border-bottom-left-radius: -1.7rem;
+}
+.modal-title {
+    margin-bottom: -16px;
+    line-height: 1.5;
+}
+b, strong {
+    font-weight: 700;
+}
+.form-control[disabled], .form-control[readonly], fieldset[disabled] .form-control {
+    background-color: #eee;
+    opacity: 1;
+}
+
+.side-content::-webkit-scrollbar-thumb {
+    -webkit-border-radius: 10px;
+    border-radius: 10px;
+    background: #4d5896;
+    box-shadow: inset 0 0 6px rgba(51, 122, 183, 0.83);
+}
+   
+a {
+    color: #337ab7;
+    text-decoration: none;
+    outline: none;
+}
+  </style>
+ <div class="col-sm-10 col-md-10 col-lg-10">
+ 
+            <h3 style="border-bottom: 2px solid #5b8fde;padding-bottom: 8px;">OPPORTUNITY INFORMATION<span>
+              
+                    <a class="btn btn-default float-right" href="#addOpp"data-toggle="modal" style="background-color: #5b8fde; color:white;" >Add</a></span>
+                </h3>
+       
+        <div class="container" style="max-height:0px";>
+  
+                <!-- Button to Open the Modal -->
+                
+              
+                <!-- The Modal -->
+                <div class="modal" id="addOpp">
+                        <div class="modal-dialog" style="width: 41%;">
+              
+                                <!-- Modal content-->
+                                <div class="modal-content" style="border: 4px solid #dcdada;width: 125%;">
+                                  <div class="modal-header" style="background-color:#5b8fde;color:white;height:45px;">
+                                     <h5 class="modal-title">Lead to Opportunity</h5>
+                                    <button type="button" class="close" data-dismiss="modal" style="color: white;opacity: 1;margin-top: -21px;">&times;</button>
+                                   
+                                  </div>
+                      <!-- Modal body -->
+                      <div class="modal-body side-content" style="height:350px; overflow-y:scroll; overflow-x:hidden;" id="ConvertScroll">
+                          <form class="form-signin" method="post" action="/addOpportunity">
+                      <div class="form-group row">
+                          
+                      <div class="col-sm-2"></div>
+
+                      <div class="col-sm-3">
+                          <span style="color: red;">*</span>Name :</div>
+                          <div class="col-sm-6">
+                          <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="" name="Name" >
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                       <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm "style="font-size: smaller;">Account :</label>
+                          <div class="col-sm-6">
+                          <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="" name="Account">
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller";>Primary Contact :</label>
+                          <div class="col-sm-6">
+                          <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="" name="PrimaryContact">
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                      <div class="form-group row">
+                      <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller";>Source :</label>
+                          <div class="col-sm-6">
+                          <select class="strike" id="sel1" style="height:22px" name="Source">
+                             <option>Current Account</option>
+                             <option>External Party</option>
+                             <option>Idention Workshop</option>
+                             <option>Prospecting</option>
+                             <option>Roadshow</option>
+                             <option>Telephone Enquiry</option>
+                             <option>Trade Fair</option>
+                             <option>Website</option>
+                             <option>Campaign</option>
+              
+                          </select>
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                       <div class="col-sm-3">
+                          <span style="color: red;">*</span>Excepted value :</div>
+                          <div class="col-sm-4">
+                          <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="" style="width: 145px;" name="Exceptedvalue">
+                          </div>
+                          <div class="col-sm-2">
+                            <select class="strike" id="sel1" style=" width: 55px;float: right;margin-right: 82%;">
+                             <option>AUD</option>
+                             <option>EUR</option>
+                             <option>GBP</option>
+                             <option>INR</option>
+                             <option>USD</option>
+                             <option>YEN</option>
+              
+                          </select>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       </div>
+                        <div class="form-group row">
+                        <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller";>Start Date :</label>
+                          <div class="col-sm-6">
+                          <input type="date" id="convertstart" class="form-control" style="width:79%; height:22px; padding:0px 0px;" name="StartDate">
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller">Closing Date :</label>
+                          <div class="col-sm-6">
+                          <input type="date" id="convertstart" class="form-control" style="width:79%; height:22px; padding:0px 0px;" name="ClosingDate">
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller">Sales Cycle :</label>
+                          <div class="col-sm-6">
+                          <select class="strike" id="sel1" style="height:22px" name="SalesCycle">
+                             <option>New Business</option>
+                             <option>Repeat Business</option>
+                            
+                          </select>
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller">Sales phase :</label>
+                          <div class="col-sm-6">
+                          <select class="strike" id="sel1" style="height:22px" name="Salesphase">
+                             <option>10% - Ideation</option>
+                             <option>25% - Qualified Opportunity </option>
+                             <option>50% - Proposal</option>
+                             <option>80% - Potential Order</option>
+                             <option>90% - Order</option>
+                             <option>100% - Execution</option>
+                          </select>
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller">Probability :</label>
+                          <div class="col-sm-6">
+                          <input type="text"  id="convertprobability" class="form-control" name="Probability">
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size:11px">Publish to Forecast :</label>
+                          <div class="col-sm-6">
+                          <input type="checkbox" id="convertpublish" name="PublishtoForecast">
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller">Forecast Category :</label>
+                          <div class="col-sm-6">
+                          <input type="text" class="form-control" id="convertforecast" value="Pipeline" name="ForecastCategory">
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller">Category :</label>
+                          <div class="col-sm-6">
+                          <select class="strike" id="convertcategory" style="height:22px" name="Category">
+                             <option>Consulting</option>
+                             <option>Intellectual Property</option>
+                             <option>Service</option>
+                             <option>Solution</option>
+                             <option>Staffing</option>
+                          </select>
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                       <div class="form-group row">
+                       <div class="col-sm-2"></div>
+                      <div class="col-sm-3" style="font-size: 13px">
+                          <span style="color: red;">*</span>Owner :</div>
+                          <div class="col-sm-6">
+                          <input type="text" class="form-control form-control-sm" id="colFormLabelSm" placeholder="" name="Owner">
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                        <div class="form-group row">
+                        <div class="col-sm-2"></div>
+                          <label for="colFormLabelSm" class="col-sm-3 col-form-label col-form-label-sm"style="font-size: smaller">Note :</label>
+                          <div class="col-sm-6">
+                          <textarea rows="3" cols="22" id="convertnote" class="form-control" style="width:81%" name="Note"></textarea>
+                          </div>
+                           <div class="col-sm-1"></div> 
+                      </div>
+                       
+                      </div>
+                      <!-- Modal footer -->
+                      <div class="modal-footer">
+                        <button type="submit" class="btn btn-primary" style=" background-color: #5b8fde; color:white; ">Save</button>
+                        <button type="button" class="btn btn-primary" data-dismiss="modal" style=" background-color: #5b8fde; color:white; ">Cancel</button>    
+                        </div>
+                     </form>
+                    </div>
+                  </div>
+                </div>
+                
+              
+      <i class="fa fa-file-excel-o" style="position: relative; margin-left: 83%;top: -23px;color: steelblue";></i>
+      <i class="fa fa-refresh" style="position: relative; left: 1096px;top: -30px"></i>
+    </div>
+    
+
+      <div class="table-responsive" >
+            <div class="table-wrapper">
+              <% if (modals.length > 0) {%>
+                <table class="table">
+                        <thead class="table" style="background-color: 1b213b ">
+                         <tr style=" color:white; font-weight:bold ; background-color: #5b8fde">
+                            <th  >Name</th>
+                            <th  >Account</th>
+                            <th  >primarycontact</th>
+                            <th  >source</th>
+                            <th  >ExceptedValue</th>
+                          
+                            <th  >salescycle</th>
+                            <th  >salesphase</th>
+                            <th  >Probability</th>
+                            <th  >forecastcategory</th>
+                            <th  >category</th>
+                            <th  >owner</th>
+                     
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% modals.forEach((modal, index) => { %>
+                            <tr style=" color:black; font-weight:bold; ">
+                                
+                                
+                                <td><%= modal.name %></td>
+                                <td><%= modal.account %></td>
+                                <td><%= modal.primarycontact %></td>
+                                <td><%= modal.source %></td>
+                               <td><%= modal.exceptedvalue %></td>
+                                 <!--<td><%= modal.startdate %></td>
+                                <td><%= modal.closedate %></td>-->
+                                <td><%= modal.salescycle %></td>
+                                <td><%= modal.salesphase %></td>
+                                <td><%= modal.probability %></td>
+                                <td><%= modal.forecastcategory %></td>
+                                <td><%= modal.category%></td>
+                                <td><%= modal.owner %></td>
+                              
+                                
+                            </tr>
+                        <% }) %>
+                    </tbody>
+                </table>
+        
+            <% } else { %>
+                <p class="text-center">No players found. Go <a href="/add" >here</a> to add players.</p>
+            <% } %>
+            </div>
+            </div>
+  
+</div>
+</div>
